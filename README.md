@@ -1,13 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Object-Detector
 
-This program can also detect the motion using opencv python and each time the system detects movement, the system will send a payload to the node.js API and will save the datetime and the image captured (BLOB) to the MySQL database. 
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This program can also detect the motion using opencv python and each time the system detects movement, the system will send a payload to the node.js API and will save the datetime and the image captured (BLOB) to the MySQL database. 
 
-Just run the python script:
+## Getting Started
+
+First, clone this repository:
+
+```bash
+git clone https://github.com/SeanDotExe/Object-Detector.git
+```
+then install all dependencies (make sure that you are in the root directory of the project, use pwd or cd for windows):
+
+```bash
+cd Object-Detector
+npm install
+```
+It will take some time to download all the dependencies into the `node_modules` directory, and after the completion of this process, the project is ready to run:
+
+## Run Python Object Detector
+
+run the python script in the terminal:
 ```
 detect.py
 ```
 
-## Getting Started
+## Run Server
 
 First, run the development server:
 
@@ -44,4 +61,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Object-Detector
+
