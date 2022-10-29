@@ -1,6 +1,6 @@
 # Object-Detector
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This program can also detect the motion using opencv python and each time the system detects movement, the system will send a payload to the node.js API and will save the datetime and the image captured (BLOB) to the MySQL database. 
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This program can also detect the motion using opencv python. Each time the system detects movement, the system will send a payload to the Node.js API and will save the datetime and the image captured (BLOB) to the MySQL database. 
 
 ## Getting Started
 
