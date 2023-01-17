@@ -21,8 +21,8 @@ def convertToBinaryData(filename):
     path = filename
     with open(path, 'rb') as file:
         imageBase64 = base64.b64encode(file.read())
-        url = 'http://localhost:4676/tolongges'
-        check =  {"datetime": str(datetime.now().strftime("%B %d, %Y - ")+ str(datetime.now().strftime("%H:%M %S sec"))), "image": str(imageBase64.decode('utf-8'))}
+        url = 'http://localhost:5000/tolongges'
+        check =  {"datetime": str(datetime.now().strftime("%B %d, %Y - ")+ str(datetime.now().strftime("%H:%M:%S"))), "image": str(imageBase64.decode('utf-8'))}
         sent = requests.post(url, json=check)
         print(sent.text)
 
@@ -31,7 +31,7 @@ def convertToBinaryData(filename):
 # Infinite while loop to treat stack of image as video
 while True:
     current_dateTime = datetime.now()
-    file_name =str(current_dateTime.hour)+str(current_dateTime.minute) + str(current_dateTime.second) + str(current_dateTime.microsecond)
+    file_name =str(current_dateTime.hour)+str(current_dateTime.minute) + str(current_dateTime.second)
 
 
     check, frame = video.read()
@@ -50,7 +50,7 @@ while True:
     cnts,_=cv2.findContours(thresh_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     for contour in cnts:
-        if cv2.contourArea(contour) < 10000:
+        if cv2.contourArea(contour) < 50000:
             continue
         status=1
         (x, y, w, h)=cv2.boundingRect(contour)

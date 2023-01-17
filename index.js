@@ -42,7 +42,7 @@ app.post("/tolongges", (req, res) => {
 
 // READ (select)
 app.get("/shows", (req, res) => {
-  connection.query("SELECT * FROM detection ORDER BY datetime DESC", (err, results) => {
+  connection.query("SELECT * FROM detection ORDER BY datetime ASC", (err, results) => {
     try {
       if (results.length > 0) {
         let all = [];
